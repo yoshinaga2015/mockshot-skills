@@ -26,6 +26,37 @@ The copy follows the **2-13-2 rule**: most people stop after **2** screenshots, 
 
 The plan works with any design tool. If you use [MockShot Studio](https://mockshot.studio) (Mac app, plus a browser editor), the agent can also write the plan as a `.mockshot` project that you open directly, so you start with the slides and headlines already in place. Format: [`references/mockshot-format.md`](store-screenshot-planner/references/mockshot-format.md).
 
+### Optional: let the agent build the slides in the Mac app
+
+If you have the MockShot Studio Mac app, the agent can also build the slides in the app for you over MCP: fill in headlines and screenshots, check small previews, and export the PNGs. This uses the [`mockshot-studio`](https://www.npmjs.com/package/mockshot-studio) npm package (Node.js 20 or later). Without it, the skill works as above.
+
+1. Pair once (the app shows an approval dialog):
+
+   ```sh
+   npx -y mockshot-studio pair
+   ```
+
+2. Add the MCP server. Claude Code:
+
+   ```sh
+   claude mcp add mockshot -- npx -y mockshot-studio mcp
+   ```
+
+   Cursor (global MCP settings, or `.cursor/mcp.json` in the project):
+
+   ```json
+   {
+     "mcpServers": {
+       "mockshot": {
+         "command": "npx",
+         "args": ["-y", "mockshot-studio", "mcp"]
+       }
+     }
+   }
+   ```
+
+Then ask for the screenshots as usual. The agent writes the plan, builds the slides with `add_slide` / `update_slide`, checks them with `preview_slides` (free), and asks before `export_png`, which uses one export from your allowance per call. The same steps are available as `mockshot` CLI commands (`npx -y mockshot-studio --help`).
+
 ## Files
 
 ```

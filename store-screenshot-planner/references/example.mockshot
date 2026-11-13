@@ -1,0 +1,39 @@
+{
+  "schemaVersion": 1,
+  "metadata": { "displayName": "Example – App Store" },
+  "activePresetId": "preset-app-store-iphone-17-portrait-default",
+  "exportBackground": { "presetId": "gradient-cool-pearl" },
+  "slides": [
+    {
+      "id": "slide-1",
+      "screenshot": { "kind": "empty" },
+      "mock": { "deviceId": "iphone-17", "scale": "relaxed" },
+      "layout": { "mode": "auto-stack", "copyBelowMock": false, "textAlign": "center" },
+      "mainMessage": {
+        "text": "Split bills in ==seconds==",
+        "position": "above-mock",
+        "fontSizePx": 37
+      },
+      "caption": { "enabled": false, "text": "", "position": "below-main" },
+      "zoomCallouts": []
+    },
+    {
+      "id": "slide-2",
+      "screenshot": { "kind": "empty" },
+      "mock": { "deviceId": "iphone-17", "scale": "relaxed" },
+      "layout": { "mode": "auto-stack", "copyBelowMock": false, "textAlign": "center" },
+      "mainMessage": {
+        "text": "Snap the receipt. Done.",
+        "position": "above-mock",
+        "fontSizePx": 37
+      },
+      "caption": {
+        "enabled": true,
+        "text": "Line items are read automatically",
+        "position": "below-main"
+      },
+      "zoomCallouts": []
+    }
+  ],
+  "activeSlideIndex": 0
+}

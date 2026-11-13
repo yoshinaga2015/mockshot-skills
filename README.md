@@ -5,7 +5,7 @@ An agent skill that plans store screenshots from your app's own code. It reads y
 Works with Claude Code, Cursor, Codex and other agents that support [skills](https://skills.sh).
 
 ```sh
-npx skills add yoshinaga2015/skills
+npx skills add yoshinaga2015/mockshot-skills
 ```
 
 Then ask your agent something like:
